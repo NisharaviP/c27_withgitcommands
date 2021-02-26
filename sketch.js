@@ -1,12 +1,13 @@
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
+//namespacing constraint
 const Constraint = Matter.Constraint;
 
 var engine, world;
 var box1, pig1;
 var backgroundImg,platform;
-var bird, slingShot;
+var bird;
 
 function preload() {
     backgroundImg = loadImage("sprites/bg.png");
@@ -37,7 +38,8 @@ function setup(){
     log5 = new Log(870,120,150, -PI/7);
 
     bird = new Bird(100,100);
-
+    
+    //new log and chain
     log6 = new Log(230,180,80, PI/2);
     chain = new Chain(bird.body,log6.body);
 }
